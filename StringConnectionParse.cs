@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace ReportCCPChekBilance
-{
+ 
     public class StringConnectionParse
     {
-        //Restituisce i valori
+        //Retur values
         public readonly List<Parser> Parses = new List<Parser>();
 
         /// <summary>
-        ///     Passare tutta la stringa di connessione
+        ///     Add string complete connection
         /// </summary>
         /// <param name="ConnectionString"></param>
         public void Parse(string ConnectionString)
@@ -18,17 +17,15 @@ namespace ReportCCPChekBilance
             foreach (var t in splitOne)
             {
                 var splitTwo = t.Split('=');
-
-                var parser = new Parser {Parametro = splitTwo[0], Valore = splitTwo[1]};
-
+                var parser = new Parser { Parameter = splitTwo[0], Value = splitTwo[1]};
                 Parses.Add(parser);
             }
         }
 
         public class Parser
         {
-            public string Parametro { get; set; }
-            public string Valore { get; set; }
+            public string Parameter { get; set; }
+            public string Value { get; set; }
         }
     }
-}
+ 
